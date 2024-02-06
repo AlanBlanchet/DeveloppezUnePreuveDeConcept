@@ -1,0 +1,22 @@
+\section{Introduction}
+
+Ce rapport prévisionnel présente les recherches que j'ai mené pour le choix de mon sujet {\it Proof of Concept} selon les critères d'OpenClassrooms.
+
+Ayant peu de connaissances en Reinforcement Learning, ce projet est un challenge pour moi et je dois donc tout d'abord me former pour mieux maitriser celui-ci.
+
+J'ai reccueilli toutes les informations que j'ai pu trouver sur le sujet dans un répertoire GitHub\footnote{\href{https://github.com/AlanBlanchet/AI-4-Alan}}
+
+\section{Recherches}
+
+
+Je me suis d'abord renseigné sur les bases du Reinforcement Learning. En commencant une simple matrice d'état à action $Q$, puis sur les différents algorithmes existants plus récents.
+
+J'ai réimplémenté l'algorithme \ucite{REINFORCE} classique qui fait déjà usage du Deep Learning. Puis j'ai étudié les algorithmes \ucite{VPG}/\ucite{TRPO}/PPO qui sont des améliorations de celui-ci.
+
+Je me suis également renseigné à partir de nombreux repositories Github sur les implémentations plusieurs algorithmes. Le site d'OpenAI est également une source d'information importante car ce sont eux-même qui ont développé une solution pour abstraire la notion d'environnement de simulation afin d'effectuer des tests sur différents jeux.
+
+\section{Algorithme retenu}
+
+Après avoir compris une multitude de notions différentes. Je me suis mis à la recherche d'un algorithme récent qui pourrait satisfaire les contraites du projet.
+
+J'ai donc choisi l'algorithme \ucite{NGU} (2020) qui utilise un mechsanisme de curiosité pour améliorer l'apprentissage de l'agent.

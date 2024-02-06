@@ -1,0 +1,183 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{NGU}{misc}{}
+      \name{author}{11}{}{%
+        {{hash=db6afdf70ea61bf8ed973a75b90ff818}{%
+           family={Badia},
+           familyi={B\bibinitperiod},
+           given={Adrià\bibnamedelima Puigdomènech},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=7bc3f033798ee7b02f35410a4dca1e30}{%
+           family={Sprechmann},
+           familyi={S\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=bdc16300b676174e42fb52f6bd46e0ba}{%
+           family={Vitvitskyi},
+           familyi={V\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3c364e4c999f5f070d8e69cdb72fa5bb}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f31963abd2aa43dd3aafc40aa1252a05}{%
+           family={Piot},
+           familyi={P\bibinitperiod},
+           given={Bilal},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a99525ff7f511e216bf0509d375a9691}{%
+           family={Kapturowski},
+           familyi={K\bibinitperiod},
+           given={Steven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ba1d4f04789f2b5c907b23f0b0ac1912}{%
+           family={Tieleman},
+           familyi={T\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod}}}%
+        {{hash=2a4fee23ef9a148a64213e2704009a20}{%
+           family={Arjovsky},
+           familyi={A\bibinitperiod},
+           given={Martín},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4295e4094c426f01903ac60155866130}{%
+           family={Pritzel},
+           familyi={P\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3138c5cdf79a36c2f4d4e8b16f06b504}{%
+           family={Bolt},
+           familyi={B\bibinitperiod},
+           given={Andew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=24fe1af011227491e54e299ba4cb24b5}{%
+           family={Blundell},
+           familyi={B\bibinitperiod},
+           given={Charles},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {OpenAI}%
+      }
+      \strng{namehash}{8efc73701d6c33e4a657b6716f9f406f}
+      \strng{fullhash}{596ca76b4c2c96542867bdaea4b463a1}
+      \strng{bibnamehash}{596ca76b4c2c96542867bdaea4b463a1}
+      \strng{authorbibnamehash}{596ca76b4c2c96542867bdaea4b463a1}
+      \strng{authornamehash}{8efc73701d6c33e4a657b6716f9f406f}
+      \strng{authorfullhash}{596ca76b4c2c96542867bdaea4b463a1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://openreview.net/pdf?id=Sye57xStvB}}
+      \field{title}{NEVER GIVE UP: LEARNING DIRECTED EXPLORATION STRATEGIES}
+      \field{year}{2020}
+    \endentry
+    \entry{TRPO}{misc}{}
+      \name{author}{5}{}{%
+        {{hash=3e09bd2a25d237ebdaed560a07c0451e}{%
+           family={Schulman},
+           familyi={S\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=c9545da54b33744da25943cdf66eadac}{%
+           family={Levine},
+           familyi={L\bibinitperiod},
+           given={Sergey},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a901fd78fe1108cfa7d11129644967c7}{%
+           family={Moritz},
+           familyi={M\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=8a36116840c7ee55901618c95fd08a58}{%
+           family={Jordan},
+           familyi={J\bibinitperiod},
+           given={Michael\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=e28d4ee199593959d8c29980a64f1974}{%
+           family={Abbeel},
+           familyi={A\bibinitperiod},
+           given={Pieter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d6613ae59595910252a86a61babf6c8}
+      \strng{fullhash}{945251de1d41bc2767a541a8148f51da}
+      \strng{bibnamehash}{945251de1d41bc2767a541a8148f51da}
+      \strng{authorbibnamehash}{945251de1d41bc2767a541a8148f51da}
+      \strng{authornamehash}{8d6613ae59595910252a86a61babf6c8}
+      \strng{authorfullhash}{945251de1d41bc2767a541a8148f51da}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://arxiv.org/pdf/1502.05477.pdf}}
+      \field{title}{Trust Region Policy Optimization}
+      \field{year}{2017}
+    \endentry
+    \entry{REINFORCE}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=eb920e5277d3d5fd0903f3cd41e11871}{%
+           family={Sutton},
+           familyi={S\bibinitperiod},
+           given={Richard\bibnamedelima S.},
+           giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=09a4af5c985fc9a46727803f19cd8272}{%
+           family={McAllester},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=74d941c38e5affcd359ed5814815805f}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Satinder},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ad31daafb6eb6186dd51ffeae5196ec0}{%
+           family={Mansour},
+           familyi={M\bibinitperiod},
+           given={Yishay},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {AT&T Labs}%
+      }
+      \strng{namehash}{176c86aa36fab51e81d033c2d8ea8cbe}
+      \strng{fullhash}{6b36fd87902dbca910efbc0f913a7749}
+      \strng{bibnamehash}{6b36fd87902dbca910efbc0f913a7749}
+      \strng{authorbibnamehash}{6b36fd87902dbca910efbc0f913a7749}
+      \strng{authornamehash}{176c86aa36fab51e81d033c2d8ea8cbe}
+      \strng{authorfullhash}{6b36fd87902dbca910efbc0f913a7749}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf}}
+      \field{title}{Policy Gradient Methods for Reinforcement Learning with Function Approximation}
+      \field{year}{1999}
+    \endentry
+  \enddatalist
+  \keyalias{VPG}{REINFORCE}
+\endrefsection
+\endinput
+

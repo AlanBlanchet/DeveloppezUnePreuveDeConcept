@@ -1,0 +1,79 @@
+\section{Algorithme}
+
+L'algorithme \ucite{NGU} est une combinaison et amélioration de plusieurs algorithmes existants. Tout d'abord, un algorithme \textit{Q-learning} est utilisé pour choisir une action en fonction d'un état donné. Plusieurs améliorations sont apportées à cet algorithme comme l'utilisation d'un deuxième réseau appelé \textit{target network} qui possède exactement la même structure que notre policy. Le but de cette séparation est de stabiliser l'entrainement et de faire converger notre policy plus rapidement. Ainsi, on modifiera les poids de notre réseau \textit{target} moins fréquemment que notre réseau utilisé pour récupérer une action à un instant $t$. En effet, si nous utilisions le même réseau pour choisir l'action et pour calculer la valeur de cette action, nous aurions un problème de \textit{moving target} où on chercherait à effectuer une approximation d'un réseau qui est en constante évolution. Combiné avec des changements d'état parfois très fort, cela rendrait l'entrainement très instable. On obtient donc un autre algorithme, le \ucite{DQN}.
+
+~\\
+Le réseau \ucite{DQN} possède une architecture assez traditionnelle en et utilise un module linéaire en dernière couche afin de proposer des actions en fonction d'une observation. Mais ce modèle ne permet pas de prendre en compte les actions passées. Par exemple dans le jeu de pong, le DQN ne peut pas connaitre la direction de la balle. Pour cela il y a plusieurs solutions. Le DQN propose une stratégie dite de \textit{stacking} qui consiste à passer aux premières layers des séquences d'observations. Une autre pratique est d'utiliser un réseau récurrent \ucite{RNN} qui permet de prendre en compte les actions passées. On utilise plus courrement un \ucite{LSTM}. Avec cette combinaison de réseaux ML classiques et LSTM on obtient réseau \ucite{DRQN}.
+
+~\\
+L'algorithme \ucite{DRQN} permet donc de prêter attention à différentes séquences passées. Les auteurs du \ucite{DRQN} précisent que leur algorithme n'améliore pas les performances du \ucite{DQN}. Cependant, il est plus stable et permet de réduire le temps d'entrainement. C'est donc un bon compromis entre performance et temps d'entrainement. Cependant, il est possible d'aller plus loin en utilisant un réseau récurrent plus complexe. C'est ce que propose l'algorithme \ucite{R2D2} en incluent plusieurs améliorations.
+
+~\\
+\ucite{R2D2} ajoute la fonctionnalité de lancer plusieurs algorithmes \ucite{DRQN} en parralèle dans des environnements qui leur est propre. Ainsi \ucite{R2D2} possède son propre réseau central \ucite{DRQN} sur lequel l'entrainement sera effectué. Les réseaux à l'intérieur des processus en parallèle ont pour unique but de récupérer des données avec une policy fixe. Cette policy sera mise à jour selon une fréquence que l'on peut définir de l'agent central vers l'agent dans le processus.
+
+\ucite{R2D2} ajoute également une amélioration sur le sampling des données. Il propose d'utiliser une liste de priorités pour pondérer les différentes trajectoires de notre buffer. Ainsi, les trajectoires les plus intéressantes seront plus souvent utilisées pour l'entrainement. Cela permet de réduire le temps d'entrainement et d'augmenter la convergence.
+
+~\\
+Finalement, le réseau \ucite{NGU} vient également se greffer à tous ces travaux.
+
+\ucite{NGU} cherche à guider l'agent vers des états qui pourraient l'intéresser en maximisant l'exploration et en attribuant un bonus d'exploration au calcul final de la récompense (intrinsic reward). Plus le réseau explore l'environnement, moins ce bonus est attribué à l'agent. Cette méthode s'appelle \textit{curiosity-driven exploration}.
+
+Le papier propose de séparer le reward en deux catégories. Le reward classique que l'agent obtient en effectuant des actions qui maximisent son reward de l'environnement et un reward d'exploration qui incite l'agent à effectuer des explorations.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width=\linewidth]{../assets/ngu_architecture.png}
+    \caption{Schéma de l'algorithme \ucite{NGU}}
+\end{figure}
+
+\subsection{Reward}
+
+Le papier utiliser une technique de \textit{reward shaping} pour attribuer un reward d'exploration à l'agent. Ce reward s'appelle le \textit{intrinsic reward} $r^i$ et est calculé à partir de deux sous-rewards. Un dans leur \textit{episodic novelty module} $r^{episodic}$ et un autre dans le \textit{life-long novelty module} $\alpha$. La formule est la suivante :
+
+$$ r^i_t = r^{episodic}_t \cdot min \{ max \{ \alpha_t, 1 \}, L \} $$
+
+
+Dans le papier, les auteurs ont choisit $L = 5$.
+
+\subsection{Episodic novelty module}
+
+L'\textit{episodic novelty module} est un reward d'exploration qui est attribué à l'agent lorsqu'il visite un état qu'il n'a pas encore visité dans un épisode. Ce reward est calculé en fonction de la distance entre deux \textit{controllable states} qui correspond à un embedding d'un état. Plus l'agent est loin d'un état qu'il a déjà visité dans un épisode, plus le reward d'exploration est élevé. C'est ce qui va permettre à l'agent de ne pas refaire les mêmes actions dans un épisode. L'embedding est ajouté au \textit{replay buffer} pour ensuite plus facilement être comparé avec les embeddings des états futurs.
+Cette comparaison s'effectue en calculant la distance grâce à la fonction $K$ qui représente un algorithme traditionnel de K-Nearest Neighbors. La formule est la suivante :
+
+$$ r^{episodic}_t = \frac{\beta}{\sqrt{\sum_{x_i \in N_k} K(f(x_t), f(x_i))} + c} $$
+
+$c$ est une constante permettant d'éviter une division par 0. K est la fonction de distance. $x_i$ sont les embeddings observés dans un épisode.
+
+Pour calculer ces embeddings, les auteurs utilisent un réseau de neuronnes $f$ qui prend en entrer un état et qui renvoie un embedding. Pour ce faire, le réseau est entrainé sur un autre réseau d'\textit{inverse dynamics} qui prend en entrée deux embeddings des états $s_t$ et $s_{t+1}$, puis les concatène pour prédire l'action qui a été effectuée pour passer de $s_t$ à $s_{t+1}$. La formule est la suivante :
+
+$$ p(a | x_t, x_{t+1}) = h(f(x_t), f(x_{t+1})) $$
+
+$h$ étant un réseau qui concatène ses deux entrées et qui renvoie une action. En entrainant ce réseau, on entraine également le réseau $f$ à trouver des embeddings qui permettent de prédire des actions.
+
+Cette technique permet également de résoudre le problème du \textit{noisy TV} où l'agent maximise son reward d'exploration en n'effectuant aucune action. L'agent obtient son reward uniquement un observant l'environnement changer. Ainsi avec cette méthode, si l'erreur de prédiction de l'action avec deux états est élevée, l'agent sera encouragé à effectuer des actions pour réduire cette erreur.
+
+\subsection{Life-long novelty module}
+
+
+~\\
+L'algorithme dispose également d'un \textit{life-long novelty module} qui permet de calculer un reward d'exploration sur le long terme. Ce module permet de décourager l'agent à visiter des états qu'il a déjà visités dans d'autres épisodes. Ainsi, si dans un épisode on a un bonus $r^{episodic}_t$ élevé et identique pour des états identiques entre épisodes, le \textit{life-long} reward quant à lui sera plus faible pour le deuxième épisode. C'est ce mécanisme qui guide l'agent vers des états qu'il n'a pas encore visité inter-épisodes.
+
+Le life-long novelty module $\alpha$ est calculé de la manière suivante :
+
+$$ \alpha_t = 1 + \frac{err(x_t)-\mu_e}{\sigma_e} $$
+
+$\mu_e$ et $\sigma_e$ sont respectivement la moyenne mobile et l'écart-type mobile épisodiques.
+
+~\\
+$err(x)$ est calculé d'une façon spéciale. Les auteurs utilisent un réseau \ucite{RND}. Ce réseau est composé de deux modules dont les poids sont initialisés aléatoirements. On va considérer un réseau comme état notre target et l'autre notre réseau de prédiction. Ainsi, lorsqu'un état un qui "sort du lot" sera découvert, on aura une erreur de prédiction élevée. C'est cette erreur qui sera utilisée pour calculer le reward d'exploration long-terme.
+
+\subsection{Augmented reward}
+
+La combinaison de ces rewards nous donne un \textit{augmented reward}. Il se calcul de cette façon :
+
+$$ r_t = r^e_t + \beta r^i_t $$
+
+On remarque que le reward d'exploration est multiplié par un facteur $\beta$ qui permet de régler l'importance de l'exploration dans l'entrainement de l'agent. Plus $\beta$ est élevé, plus l'agent sera encouragé à explorer son environnement. Les auteurs utilisent plusieurs valeurs de $\beta$ avec l'algorithme \ucite{R2D2}. Cela leur permet d'avoir plusieurs policies dont certaines qui cherchent à explorer un maximum l'environnement et d'autres qui cherchent à maximiser le reward de l'environnement. Pour leurs expériences avec plusieurs $\beta$, $\beta = 0$, ce qui fait qu'il y a toujours une policy qui n'utilise que le reward exploité de l'environnement. En tous, les auteurs utilisent 256 policies différentes.
+
+Plus l'agent explore l'environnement et devient familier avec celui-ci, plus le bonus d'exploration disparait et l'apprentissage est uniquement guidé par les rewards extrinsèques.

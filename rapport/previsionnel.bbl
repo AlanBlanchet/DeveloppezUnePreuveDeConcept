@@ -1,0 +1,17 @@
+\begin{thebibliography}{1}
+
+\bibitem{tth}
+The package is TTH, available at http://hutchinson.belmont.ma.us/tth/ .
+
+\bibitem{use2e}
+As the mark-up of the \TeX\ source for this document makes clear, your file
+  should be coded in \LaTeX 2${\varepsilon}$, not \LaTeX\ 2.09 or an earlier
+  release. Also, please use the \texttt{article} document class.
+
+\bibitem{inclme}
+Among whom are the author of this document. The ``real'' references and notes
+  contained herein were compiled using B{\small{IB}}\TeX\ from the sample .bib
+  file \texttt{scibib.bib}, the style package \texttt{scicite.sty}, and the
+  bibliography style file \texttt{Science.bst}.
+
+\end{thebibliography}

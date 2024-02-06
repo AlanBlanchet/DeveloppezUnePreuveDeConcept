@@ -1,0 +1,47 @@
+{
+  "files.exclude": {
+    "**/.idea": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/test-reports": true,
+    "**/*.egg-info": true,
+    "**/*.aux":true,
+    "**/*.fdb_latexmk":true,
+    "**/*.fls":true,
+    "**/*.log":true,
+    "**/*.synctex.gz":true,
+    "**/*.bbl":true,
+    "**/*.blg":true,
+    "**/*.loa":true,
+    "**/*.bst":true,
+    "**/*.out":true,
+    "**/*.bcf":true,
+    "**/*.synctex(busy)":true,
+    "**/*.run.xml":true,
+  },
+  "editor.formatOnSave": true,
+  "python.analysis.importFormat": "relative",
+  "notebook.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit",
+    },
+  },
+  "[javascript][json][typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[markdown-math][markdown_latex_combined][markdown]": {
+    "editor.defaultFormatter": null,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+  "latex-workshop.latex.autoBuild.run": "onSave",
+}

@@ -1,0 +1,10 @@
+# Neo configuration to be merged with the default
+# default.yml
+workstation:
+  exclude:
+  # List of exclusions
+  include:
+  # List of inclusions
+delivery:
+  exclude:
+  include:

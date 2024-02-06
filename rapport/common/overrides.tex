@@ -1,0 +1,13 @@
+\hbadness=99999
+
+% href defaults to link as text
+\LetLtxMacro{\oldhref}{\href}
+\RenewDocumentCommand\href{mo}{
+    \IfValueTF{#2}
+    {\oldhref{#1}{#2}}
+    {\oldhref{#1}{#1}}
+}
+
+\DefineBibliographyStrings{french}{
+    in = {en},
+}

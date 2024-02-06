@@ -1,0 +1,44 @@
+\section{Résultats}
+
+\subsection{Environnements}
+
+Pour obtenir des résultats du réseau, les auteurs ont utilisé les jeux Atari grâce à la librairie OpenAI Gym \cite{OpenAI_Gym}. Cette librairie expose des jeux vidéo classiques qui sont utilisés pour tester les performances des algorithmes de RL.
+
+\subsection{Papier}
+
+L'essence même du papier est de montrer qu'il peut mieux performer dans des environnements où l'exploration est primordiale. Ainsi, des tests ont été effectués sur des jeux où le score était auparavant très faible dû à un manque d'exploration de l'agent. Ces jeux comprennent \textit{Montezuma's Revenge}, \textit{Pitfall!}, \textit{Private Eye}, \textit{Solaris} et \textit{Venture}. Ils ont également comparé les résultats avec des jeux où l'exploration est beaucoup moins pertinente. C'est-à-dire dans des jeux avec des rewards \textit{dense} (qui sont donnés fréquemment) comme \textit{Beam Rider}, \textit{Breakout}, \textit{Enduro}, \textit{Pong} et \textit{Q*bert}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width=\linewidth]{../assets/ngu_dense_hard.png}
+    \caption{Différentes configurations de NGU sur les jeux Atari avec un reward \textit{dense} et \textit{sparse}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width=\linewidth]{../assets/ngu_comp.png}
+    \caption{Résultats comparés aux algorithmes \textit{baseline}, RND et R2D2. La baseline comprend les algorithmes DQN + PixelCNN \cite{DQNPixelCNN}, DQN + CTS et PPO + CoEx \cite{PPO_CoEx}}
+\end{figure}
+
+On remarque que NGU ne performe pas mieux partout. Il est plus performant sur Pitfall! et Private Eye et ce avec des paramètres différents.
+
+\subsection{Mon implémentation}
+
+Mon implémentation est présente dans un répertoire github \footnote{\href{https://github.com/AlanBlanchet/DeveloppezUnePreuveDeConcept}}. Elle comprend du code d'un autre répertoire github de 'Coac'\footnote{\href{https://github.com/Coac/}} ainsi que mes modifications.
+
+~\\
+J'ai d'abord commencé par implémenter les versions DQN, DRQN puis R2D2. Mais mon code ne s'adaptait pas facilement à l'algorithme NGU car cela m'aurait fait casser toute ma structure du replay buffer. J'ai donc préféré récupérer l'implémentation de 'Coac' qui était déjà fonctionnelle mais ne possède quant à elle pas l'implémentation de R2D2.
+
+J'ai apporté des modifications au code afin de pouvoir le tester sur le jeu choisi, \textit{Montezuma's Revenge}. J'ai également ajouté des logs pour pouvoir suivre l'évolution de l'entrainement à travers Tensorboard. L'implémentation ne prennait pas en compte l'image de l'environnement. J'ai donc dû modifier le code pour intégrer les observations 2D, les encoder en 1D dans l'objectif d'ensuite pouvoir construire l'embedding de NGU.
+
+\begin{figure}[H]
+    \centering
+    \subfloat[\centering Reward extrinsèque après 724 épisodes]{{\includegraphics[width=7cm]{../assets/res2.png} }}
+    \qquad
+    \subfloat[\centering Reward extrinsèque (0) + intrinsèque après 724 épisodes]{{\includegraphics[width=7cm]{../assets/res1.png} }}
+\end{figure}
+
+Dans les résultats ci-dessus, on peut voir qu'il n'y a aucun reward extrinsèque \textit{mean reward} tandis que le reward total (extrinsèque+intrinsèque) \textit{mean augmented reward} est lui bien présent.
+
+~\\
+L'algorithme a été entrainé pendant 8h et a parcouru un total de 72 500 frames sur un GPU RTX4070 Ti de nvidia. Dans le papier, plus de 35 milliards de frames ont été parcourues. Soit une équivalence de 440 ans d'entrainement pour mon cas.
