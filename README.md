@@ -6,6 +6,20 @@
 poetry install
 ```
 
+## Lancer un script
+
+Veiller à bien avoir l'environnement d'activé
+
+```bash
+poetry shell
+```
+
+Lancer le script actuellement fonctionnel (tourne sur GPU avec le champ 'cuda' présent dans la config) :
+
+```bash
+python src/dpc/other/train.py
+```
+
 ## Sources
 
 - [Paper](https://openreview.net/pdf?id=Sye57xStvB)
