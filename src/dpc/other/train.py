@@ -134,7 +134,7 @@ def main():
                     episodic_memory, next_state_emb
                 )
                 episodic_memory.append(next_state_emb)
-                beta = 0.0001
+                beta = 0.1
                 augmented_reward = env_reward + beta * intrinsic_reward
 
             mask = 0 if done else 1
