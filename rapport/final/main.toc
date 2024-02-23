@@ -10,9 +10,10 @@
 \contentsline {subsection}{\numberline {3.1}Reward}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Episodic novelty module}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Life-long novelty module}{6}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Augmented reward}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.4}Augmented reward}{7}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Résultats}{7}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Environnements}{7}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Papier}{7}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Mon implémentation}{8}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}%
+\contentsline {subsection}{\numberline {4.4}Suite}{9}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusion}{11}{section.5}%

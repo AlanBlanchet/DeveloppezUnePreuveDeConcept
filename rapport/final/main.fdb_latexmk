@@ -1,11 +1,13 @@
 # Fdb version 3
-["biber main"] 1707225860 "main.bcf" "main.bbl" "main" 1707228117
-  "main.bcf" 1707228117 108362 ffb4951b6a430137623a62353c82c03a "pdflatex"
-  "sources.bib" 1707224097 5817 f25041458cdb8e1fd43c3b2c4381c581 ""
+["biber main"] 1708521902 "main.bcf" "main.bbl" "main" 1708522942
+  "main.bcf" 1708522942 108683 12e62ba9a2a2412861f389db13e66d27 "pdflatex"
+  "sources.bib" 1708518861 6383 e50001db392d46a6c8004f4bda5f2ed7 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1707228114 "/home/alan/dev/DeveloppezUnePreuveDeConcept/rapport/final/main.tex" "main.pdf" "main" 1707228117
+["pdflatex"] 1708522939 "/home/alan/dev/DeveloppezUnePreuveDeConcept/rapport/final/main.tex" "main.pdf" "main" 1708522942
+  "../assets/dqn_reward.png" 1708522418 18320 4dc9cf60fc4b0281f9fbed3fb5e1ad73 ""
+  "../assets/dqn_train_view.png" 1708522516 967 c4b68a510848017031a55165589eddc9 ""
   "../assets/neovision.png" 1705675691 155858 9bfeeee0f7ae0e4f2c9b3d6960df832f ""
   "../assets/neovision_carres.png" 1705675671 13255 e0592c6d6fe95ac4d5a1d9422045a8a6 ""
   "../assets/ngu_architecture.png" 1706872207 83849 3f12dd60b1ca21479e8c81592c3981af ""
@@ -27,6 +29,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1728.tfm" 1136768653 3584 ad49a18d8515beef6d92d4d3f197d0fd ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx2074.tfm" 1136768653 3584 7666d038713b9e38abb5c2e0f6972188 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm" 1136768653 3072 1e3dcc56ea731d0f3645bbefe8c8608c ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm1095.tfm" 1136768653 3584 929cdff2b7a8c11bd4d49fd68cb0ae70 ""
@@ -231,17 +234,17 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1705668286 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1705668320 2799878 8ba8e1ef9946243f47fe362bb2db7458 ""
   "chapters.tex" 1707225920 156 941a464af84155c1b68eef9cf3f430bc ""
-  "chapters/algorithm.tex" 1707227424 9257 ee2a936a7164c41a31e29502a627ab4c ""
-  "chapters/conclusion.tex" 1707228116 608 acb089710aa983955838e76729b0266d ""
-  "chapters/context.tex" 1707227567 4371 d16c3c01fcc93a95c39cfcc683a8453a ""
+  "chapters/algorithm.tex" 1708519715 10444 5662f12edc9885742ed7e33c415303c0 ""
+  "chapters/conclusion.tex" 1708521809 608 acb089710aa983955838e76729b0266d ""
+  "chapters/context.tex" 1708461108 4923 bf37f8e7147804fe3547f5d278450be8 ""
   "chapters/introduction.tex" 1707227611 987 d954c650ac08510829c253b2113aecd5 ""
-  "chapters/resultats.tex" 1707227740 3597 083477a6c27f9a8b61c68f664b6c9689 ""
-  "main.aux" 1707228117 6757 f9dafba9c6d1274e16c0e38fcd1f627e "pdflatex"
-  "main.bbl" 1707225861 29821 299297c03924363c9909ffbeaf4a99c0 "biber main"
-  "main.out" 1707228117 1853 6ad43dab579071569505b9d77edbaf57 "pdflatex"
-  "main.run.xml" 1707228117 2335 8b918ed4baf170e0c61a0b0109ca1b58 "pdflatex"
+  "chapters/resultats.tex" 1708522939 7452 62dec444f2ffdf1363c52f8f0d5501e8 ""
+  "main.aux" 1708522942 7555 d7a704d14211d665e00e3e87189b31ab "pdflatex"
+  "main.bbl" 1708521903 32972 93b3a26179a81adee89073a1367e6216 "biber main"
+  "main.out" 1708522942 1936 f08e2cd3d7f29abd17c79d84d83f1fcd "pdflatex"
+  "main.run.xml" 1708522942 2335 8b918ed4baf170e0c61a0b0109ca1b58 "pdflatex"
   "main.tex" 1707223451 270 ac1e9ecb75dd6596a154f44e5cc11267 ""
-  "main.toc" 1707228117 1262 246ef9fb2d38ef3d7984224e37bd0f82 "pdflatex"
+  "main.toc" 1708522942 1334 a6b70844058d254a0201802924a33a84 "pdflatex"
   "titlepage.tex" 1706820373 698 7aa81d06eb16dd9023af6adfbfa056e3 ""
   (generated)
   "main.aux"

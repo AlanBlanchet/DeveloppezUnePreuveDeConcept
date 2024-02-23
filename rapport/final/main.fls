@@ -1123,6 +1123,17 @@ INPUT ../assets/res1.png
 INPUT ../assets/res1.png
 INPUT ../assets/res1.png
 INPUT ../assets/res1.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT ../assets/dqn_reward.png
+INPUT ../assets/dqn_reward.png
+INPUT ../assets/dqn_reward.png
+INPUT ../assets/dqn_reward.png
+INPUT ../assets/dqn_reward.png
+INPUT ../assets/dqn_train_view.png
+INPUT ../assets/dqn_train_view.png
+INPUT ../assets/dqn_train_view.png
+INPUT ../assets/dqn_train_view.png
+INPUT ../assets/dqn_train_view.png
 INPUT ./chapters/conclusion.tex
 INPUT chapters/conclusion.tex
 INPUT ./chapters/conclusion.tex

@@ -1,17 +1,17 @@
 [0] Config.pm:307> INFO - This is Biber 2.17
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[67] biber:340> INFO - === mar. févr.  6, 2024, 14:24:21
-[78] Biber.pm:418> INFO - Reading 'main.bcf'
-[134] Biber.pm:972> INFO - Found 15 citekeys in bib section 0
-[144] Biber.pm:4383> INFO - Processing section 0
-[152] Biber.pm:4574> INFO - Looking for bibtex file 'sources.bib' for section 0
-[153] bibtex.pm:1713> INFO - LaTeX decoding ...
-[165] bibtex.pm:1518> INFO - Found BibTeX data source 'sources.bib'
-[313] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[313] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[313] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'fr-FR'
-[313] Biber.pm:4209> INFO - No sort tailoring available for locale 'fr-FR'
-[321] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[333] bbl.pm:757> INFO - Output to main.bbl
-[333] Biber.pm:130> WARN - BAD RECURSION! Entry alias 'REINFORCE' is identical to the entry key, skipping ...
-[333] Biber.pm:132> INFO - WARNINGS: 1
+[71] biber:340> INFO - === mer. févr. 21, 2024, 14:25:03
+[82] Biber.pm:418> INFO - Reading 'main.bcf'
+[139] Biber.pm:972> INFO - Found 17 citekeys in bib section 0
+[150] Biber.pm:4383> INFO - Processing section 0
+[158] Biber.pm:4574> INFO - Looking for bibtex file 'sources.bib' for section 0
+[159] bibtex.pm:1713> INFO - LaTeX decoding ...
+[173] bibtex.pm:1518> INFO - Found BibTeX data source 'sources.bib'
+[339] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[339] UCollate.pm:68> INFO - Overriding locale 'fr-FR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[339] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'fr-FR'
+[339] Biber.pm:4209> INFO - No sort tailoring available for locale 'fr-FR'
+[348] bbl.pm:654> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[361] bbl.pm:757> INFO - Output to main.bbl
+[361] Biber.pm:130> WARN - BAD RECURSION! Entry alias 'REINFORCE' is identical to the entry key, skipping ...
+[361] Biber.pm:132> INFO - WARNINGS: 1

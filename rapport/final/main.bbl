@@ -431,6 +431,46 @@
       \field{title}{Addressing Function Approximation Error in Actor-Critic Methods}
       \field{year}{2018}
     \endentry
+    \entry{PER}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=a56e72b23778a835bdade7d0511e43a3}{%
+           family={Schaul},
+           familyi={S\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d1c6b8444cb95e400ca38d5ae5c5afd3}{%
+           family={Quan},
+           familyi={Q\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+        {{hash=af540e84ef1ecdaa70b1f7c90f59fd7d}{%
+           family={Antonoglou},
+           familyi={A\bibinitperiod},
+           given={Ioannis},
+           giveni={I\bibinitperiod}}}%
+        {{hash=89dbd30410c2085cd059f32c57d4593e}{%
+           family={Silver},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {DeepMind}%
+      }
+      \strng{namehash}{04a0db021533adedf96ff47bc975d01a}
+      \strng{fullhash}{cf83dab6b2af35a31aaeaaf1c6f70196}
+      \strng{bibnamehash}{04a0db021533adedf96ff47bc975d01a}
+      \strng{authorbibnamehash}{04a0db021533adedf96ff47bc975d01a}
+      \strng{authornamehash}{04a0db021533adedf96ff47bc975d01a}
+      \strng{authorfullhash}{cf83dab6b2af35a31aaeaaf1c6f70196}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://arxiv.org/pdf/1511.05952.pdf}}
+      \field{title}{Prioritized Experience Replay}
+      \field{year}{2016}
+    \endentry
     \entry{DQN}{misc}{}
       \name{author}{7}{}{%
         {{hash=f7d23cfe4ca0e6bf7a8c251bfa78aca6}{%
@@ -478,8 +518,8 @@
       \strng{authorbibnamehash}{aff24b211b34cdd515b2fd148ce0c920}
       \strng{authornamehash}{aff24b211b34cdd515b2fd148ce0c920}
       \strng{authorfullhash}{2860d669102abb5e113bf4232d6d5997}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://arxiv.org/pdf/1312.5602.pdf}}
@@ -626,6 +666,46 @@
       \field{title}{RECURRENT EXPERIENCE REPLAY IN DISTRIBUTED REINFORCEMENT LEARNING}
       \field{year}{2019}
     \endentry
+    \entry{ICM}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=09e431093c8637ade01037714cfc992c}{%
+           family={Pathak},
+           familyi={P\bibinitperiod},
+           given={Deepak},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8386009211558835d056bfe419103c76}{%
+           family={Agrawal},
+           familyi={A\bibinitperiod},
+           given={Pulkit},
+           giveni={P\bibinitperiod}}}%
+        {{hash=5a663b27298722834a8cf09bb93d8c94}{%
+           family={Efros},
+           familyi={E\bibinitperiod},
+           given={Alexei\bibnamedelima A.},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=90180e1a30742e0d15328bfe637c2ef4}{%
+           family={Darrell},
+           familyi={D\bibinitperiod},
+           given={Trevor},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Berkeley}%
+      }
+      \strng{namehash}{a353c16f2bb5e07676f9be9b2c866db4}
+      \strng{fullhash}{5e51aa99fa833fb4f48cba575f1027fd}
+      \strng{bibnamehash}{a353c16f2bb5e07676f9be9b2c866db4}
+      \strng{authorbibnamehash}{a353c16f2bb5e07676f9be9b2c866db4}
+      \strng{authornamehash}{a353c16f2bb5e07676f9be9b2c866db4}
+      \strng{authorfullhash}{5e51aa99fa833fb4f48cba575f1027fd}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://arxiv.org/pdf/1705.05363.pdf}}
+      \field{title}{Curiosity-driven Exploration by Self-supervised Prediction}
+      \field{year}{2017}
+    \endentry
     \entry{RND}{misc}{}
       \name{author}{4}{}{%
         {{hash=958f786a0b8eafaa29fae5c0aa0357a0}{%
@@ -658,8 +738,8 @@
       \strng{authorbibnamehash}{426de4bd9b5563f2b0f282889f9099c1}
       \strng{authornamehash}{426de4bd9b5563f2b0f282889f9099c1}
       \strng{authorfullhash}{a7ade441d0eac3c1c6b0064a83f4e3d8}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://arxiv.org/pdf/1810.12894.pdf}}

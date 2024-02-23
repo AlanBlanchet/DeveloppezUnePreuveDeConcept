@@ -6,7 +6,7 @@ Pour obtenir des résultats du réseau, les auteurs ont utilisé les jeux Atari 
 
 \subsection{Papier}
 
-L'essence même du papier est de montrer qu'il peut mieux performer dans des environnements où l'exploration est primordiale. Ainsi, des tests ont été effectués sur des jeux où le score était auparavant très faible dû à un manque d'exploration de l'agent. Ces jeux comprennent \textit{Montezuma's Revenge}, \textit{Pitfall!}, \textit{Private Eye}, \textit{Solaris} et \textit{Venture}. Ils ont également comparé les résultats avec des jeux où l'exploration est beaucoup moins pertinente. C'est-à-dire dans des jeux avec des rewards \textit{dense} (qui sont donnés fréquemment) comme \textit{Beam Rider}, \textit{Breakout}, \textit{Enduro}, \textit{Pong} et \textit{Q*bert}.
+L'essence même du papier \ucite{NGU} est de montrer qu'il peut mieux performer dans des environnements où l'exploration est primordiale. Ainsi, des tests ont été effectués sur des jeux où le score était auparavant très faible dû à un manque d'exploration de l'agent. Ces jeux comprennent \textit{Montezuma's Revenge}, \textit{Pitfall!}, \textit{Private Eye}, \textit{Solaris} et \textit{Venture}. Ils ont également comparé les résultats avec des jeux où l'exploration est beaucoup moins pertinente. C'est-à-dire dans des jeux avec des rewards \textit{dense} (qui sont donnés fréquemment) comme \textit{Beam Rider}, \textit{Breakout}, \textit{Enduro}, \textit{Pong} et \textit{Q*bert}.
 
 \begin{figure}[H]
     \centering
@@ -20,16 +20,19 @@ L'essence même du papier est de montrer qu'il peut mieux performer dans des env
     \caption{Résultats comparés aux algorithmes \textit{baseline}, RND et R2D2. La baseline comprend les algorithmes DQN + PixelCNN \cite{DQNPixelCNN}, DQN + CTS et PPO + CoEx \cite{PPO_CoEx}}
 \end{figure}
 
-On remarque que NGU ne performe pas mieux partout. Il est plus performant sur Pitfall! et Private Eye et ce avec des paramètres différents.
+On remarque que NGU ne performe pas mieux partout. Il est plus performant sur Pitfall! et Private Eye et ce avec des paramètres différents. Il est également très proche des résultats à l'état de l'art sur MZ (Montezuma's Revenge).
 
 \subsection{Mon implémentation}
 
-Mon implémentation est présente dans un répertoire github \footnote{\href{https://github.com/AlanBlanchet/DeveloppezUnePreuveDeConcept}}. Elle comprend du code d'un autre répertoire github de 'Coac'\footnote{\href{https://github.com/Coac/}} ainsi que mes modifications.
+Mon implémentation est présente dans un répertoire github \footnote{\href{https://github.com/AlanBlanchet/DeveloppezUnePreuveDeConcept}}. Elle comprend du code d'un autre répertoire github de 'Coac'\footnote{\href{https://github.com/Coac/}} ainsi que mes modifications. Je dispose également d'un autre répertoire github où j'ai mené mes explorations sur les différents modèles et où j'essaie d'implémenter les algorithmes de RL tout en conservant un \textit{clean code}.
 
 ~\\
-J'ai d'abord commencé par implémenter les versions DQN, DRQN puis R2D2. Mais mon code ne s'adaptait pas facilement à l'algorithme NGU car cela m'aurait fait casser toute ma structure du replay buffer. J'ai donc préféré récupérer l'implémentation de 'Coac' qui était déjà fonctionnelle mais ne possède quant à elle pas l'implémentation de R2D2.
+J'ai d'abord commencé par implémenter les versions DQN, DRQN puis R2D2. Mais mon code ne s'adaptait pas facilement à l'algorithme NGU car cela m'aurait fait casser toute ma structure du replay buffer et parallélisation. J'ai donc préféré récupérer l'implémentation de 'Coac' qui était déjà fonctionnelle mais ne possède quant à elle pas l'implémentation de R2D2.
 
-J'ai apporté des modifications au code afin de pouvoir le tester sur le jeu choisi, \textit{Montezuma's Revenge}. J'ai également ajouté des logs pour pouvoir suivre l'évolution de l'entrainement à travers Tensorboard. L'implémentation ne prennait pas en compte l'image de l'environnement. J'ai donc dû modifier le code pour intégrer les observations 2D, les encoder en 1D dans l'objectif d'ensuite pouvoir construire l'embedding de NGU.
+J'ai apporté des modifications au code afin de pouvoir le tester sur le jeu choisi, \textit{Montezuma's Revenge}. J'ai également ajouté des logs pour pouvoir suivre l'évolution de l'entrainement à travers Tensorboard. L'implémentation de \textit{Coac} ne prennait pas en compte l'image de l'environnement. J'ai donc dû modifier le code pour intégrer les observations 2D, les encoder en 1D dans l'objectif d'ensuite pouvoir construire l'embedding de NGU.
+
+Ayant quand même eu des résultats sur \textit{NGU}, je suis assez frustré de ne pas avoir eu le temps de proprement coder cet algorithme et de le tester. Je suis donc activement en train de restructurer le code pour pouvoir facilement et proprement lancer des tests poussés sur NGU.
+J'espère que ces résultats, mes recherches et expérimentations satisfairont mon jury malgré les limites de temps du projet.
 
 \begin{figure}[H]
     \centering
@@ -38,7 +41,38 @@ J'ai apporté des modifications au code afin de pouvoir le tester sur le jeu cho
     \subfloat[\centering Reward extrinsèque (0) + intrinsèque après 724 épisodes]{{\includegraphics[width=7cm]{../assets/res1.png} }}
 \end{figure}
 
-Dans les résultats ci-dessus, on peut voir qu'il n'y a aucun reward extrinsèque \textit{mean reward} tandis que le reward total (extrinsèque+intrinsèque) \textit{mean augmented reward} est lui bien présent.
+Dans les résultats ci-dessus, on peut voir qu'il n'y a aucun reward extrinsèque \textit{mean reward} tandis que le reward total (extrinsèque+intrinsèque) \textit{mean augmented reward} est lui bien présent. Dans notre cas ci-dessus, on a :
+$$ mean\_intrinsic\_reward = mean\_augmented\_reward  $$
+
+car \textit{Montezuma's Revenge} ne nous donne pas de \textit{extrinsic reward} avant beaucoup d'exploration.
 
 ~\\
 L'algorithme a été entrainé pendant 8h et a parcouru un total de 72 500 frames sur un GPU RTX4070 Ti de nvidia. Dans le papier, plus de 35 milliards de frames ont été parcourues. Soit une équivalence de 440 ans d'entrainement pour mon cas.
+
+\subsection{Suite}
+
+J'aimerais personnelement améliorer les résultats que j'ai pu obtenir malgré que cela soit suffisant pour ce projet encadré par \textit{OpenClassrooms}. J'ai l'ambition de recontruire un environnement de train/test plus proche de celui proposé dans le papier. Ainsi, je travaille actuellement sur la préparation du terrain dans le but de plus facilement entraîner un modèle RL type NGU (ou autre).
+
+~\\
+J'ai pour le moment reconstruit toute la partie DQN et ai souhaité optimisé la gestion des données afin que les entraînements soient bien plus rapides.
+J'ai construit une architecture de Replay Buffer qui s'appuie sur des \textit{Tensor}s pré-alloué au démarrage de l'entraînement. Cela devrait me permettre de plus facilement récupérer les données de mon buffer qui jusqu'à maintenant utilisait une \textit{Queue} de Python.
+Cette structure comprends les fonctionnalités suivantes :
+\begin{enumerate}
+    \item Ne pas stocker les observation suivantes (\textit{next\_obs}). Les observations sont parfois en doubles entre deux tensors \textit{obs} et \textit{next\_obs}. Cela permet d'optimiser la mémoire pour pourvoir stocker plus de \textit{samples}.
+    \item Gestion de l'historique. On aimerait pouvoir récupérer une observation et ses $n$ observations passées.
+    \item Circularité. Lorsque le buffer est plein, on écrase les données les plus anciennes. C'est une structure de \textit{Buffer Circulaire}. On doit utilise donc un pointeur qui se déplace et écrase les anciennes données lorsqu'il atteint sa capacité maximale.
+    \item Sampling en tout genre. On doit pouvoir récupérer les données les plus récentes, de manière aléatoire, un épisode entier...
+    \item Masking : Les LSTM's utilisent des masques pour ne pas montrer au réseau de neuronnes les données qu'il ne peut pas voir. Par exemple, pour la première \textit{frame} du jeu, il n'y a pas d'historique. Le LSTM ne doit donc pas regarder les $n$ observations précédentes.
+\end{enumerate}
+
+J'ai déjà pu lancer un entraînement avec cette architecture et ai réussi à obtenir des résultats cohérents sur le jeu \textit{Breakout}. J'ai testé cette architecture avec un DQN classique comprenant quelques-unes des fonctionnalités évoquées sur le \ucite{DQN}. Voici un exemple de l'évolution du reward extrinsèque au cours de l'entraînement :
+
+\begin{figure}[H]
+    \centering
+    \subfloat[\centering Évolution du reward]{{\includegraphics[width=7cm]{../assets/dqn_reward.png} }}
+    \qquad
+    \subfloat[\centering Vision de l'algorithm en mode training]{{\includegraphics[width=5cm]{../assets/dqn_train_view.png} }}
+\end{figure}
+
+J'ai laissé tourner l'algorithme pendant 1,2M de frames, soit 1 jour entier.
+Voici une vidéo \footnote{\href{https://youtube.com/shorts/d1X-cZxvf2w?feature=share}} de l'agent en pleine évaluation.
