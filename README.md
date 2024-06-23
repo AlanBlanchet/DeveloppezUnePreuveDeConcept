@@ -1,5 +1,9 @@
 # Développez Une Preuve De Concept
 
+## Rapport
+
+[Voici le rapport de ce projet](./rapport/final/main.pdf)
+
 ## Installation
 
 ```bash
